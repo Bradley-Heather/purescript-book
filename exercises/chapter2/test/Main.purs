@@ -22,7 +22,6 @@ main = do
         Assert.equal 5.0 (diagonal 3.0 4.0)
       test "5 12 13" do
         Assert.equal 13.0 (diagonal 5.0 12.0)
-         {-  Move this block comment starting point to enable more tests
 -- ANCHOR_END: diagonalTests
     suite "circleArea" do
       test "radius 1" do
@@ -37,4 +36,3 @@ main = do
       test "-789" do
         Assert.equal (-89) (leftoverCents (-789))
 
--}
