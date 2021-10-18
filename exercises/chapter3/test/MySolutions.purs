@@ -1,6 +1,6 @@
 module Test.MySolutions where
 
-import Data.AddressBook
+import Data.AddressBook (AddressBook, Entry)
 
 import Prelude
 
