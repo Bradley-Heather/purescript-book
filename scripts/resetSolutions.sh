@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # This script automatically resets exercises so they are ready to be solved.
 #  - Removes lines with a note to delete them.

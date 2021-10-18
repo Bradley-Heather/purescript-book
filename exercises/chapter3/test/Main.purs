@@ -59,7 +59,6 @@ main :: Effect Unit
 main =
   runTest do
     runChapterExamples
-    {-  Move this block comment starting point to enable more tests
     suite "Exercise - findEntryByStreet" do
       test "Lookup existing" do
         Assert.equal (Just john)
@@ -74,6 +73,7 @@ main =
       test "Check missing" do
         Assert.equal false
           $ isInBook "unknown" "person" book
+           {-  Move this block comment starting point to enable more tests
     test "Exercise - removeDuplicates" do
       Assert.equal book
         $ removeDuplicates bookWithDuplicate
