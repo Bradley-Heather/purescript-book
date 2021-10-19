@@ -49,6 +49,5 @@ findEntryByStreet strt = head <<< filter filterEntryBS
    where
    filterEntryBS :: Entry -> Boolean 
    filterEntryBS entry = _.address.street entry == strt 
-
 -}
 

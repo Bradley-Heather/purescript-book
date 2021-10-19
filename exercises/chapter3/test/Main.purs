@@ -1,7 +1,7 @@
 module Test.Main where
 
 import Prelude
-import Test.MySolutions
+import Test.MySolutions (findEntryByStreet, isInBook, removeDuplicates)
 import Data.AddressBook (AddressBook, Entry, emptyBook, findEntry, insertEntry)
 import Data.Maybe (Maybe(..))
 import Effect (Effect)
