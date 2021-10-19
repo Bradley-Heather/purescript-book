@@ -17,12 +17,11 @@ main :: Effect Unit
 main =
   runTest do
     runChapterExamples
-    {-  Move this block comment starting point to enable more tests
     suite "Show Me!" do
       test "Show Point" do
         Assert.equal "(1.0, 2.0)"
           $ show
-          $ Point {x: 1.0, y: 2.0}
+          $ Point {x: 1.0, y: 2.0}  
     suite "Common Type Classes" do
       let cpx real imaginary = Complex {real, imaginary}
       suite "Show Complex" do
@@ -33,7 +32,7 @@ main =
         test "negative imaginary" do
           Assert.equal "1.0-2.0i"
             $ show
-            $ cpx 1.0 (-2.0)
+            $ cpx 1.0 (-2.0) 
       suite "Eq Complex" do
         test "equal" do
           Assert.equal (cpx 1.0 2.0)
@@ -41,7 +40,7 @@ main =
         test "not equal" do
           Assert.expectFailure "should not be equal"
             $ Assert.equal (cpx 5.0 2.0)
-              $ cpx 1.0 2.0
+              $ cpx 1.0 2.0 
       suite "Semiring Complex" do
         test "add" do
           Assert.equal (cpx 4.0 6.0)
@@ -59,7 +58,7 @@ main =
       suite "Ring Complex" do
         test "subtract" do
           Assert.equal (cpx 2.0 3.0)
-            $ sub (cpx 3.0 5.0) (cpx 1.0 2.0)
+            $ sub (cpx 3.0 5.0) (cpx 1.0 2.0) 
       suite "Show Shape" do
         test "circle" do
           Assert.equal "(Circle (1.0, 2.0) 3.0)"
@@ -72,7 +71,7 @@ main =
             $ show $ Line (Point {x: 1.0, y: 2.0}) (Point {x: 3.0, y: 4.0})
         test "text" do
           Assert.equal "(Text (1.0, 2.0) \"Hello\")"
-            $ show $ Text (Point {x: 1.0, y: 2.0}) "Hello"
+            $ show $ Text (Point {x: 1.0, y: 2.0}) "Hello" 
     suite "Type Class Constraints" do
       suite "Eq NonEmpty" do
         test "equals" do
@@ -81,7 +80,7 @@ main =
         test "not equals" do
           Assert.expectFailure "should not be equal"
             $ Assert.equal (NonEmpty 1 [ 2, 3 ])
-            $ NonEmpty 2 [ 2, 3 ]
+            $ NonEmpty 2 [ 2, 3 ] 
       suite "Semigroup NonEmpty" do
         test "append" do
           Assert.equal (NonEmpty 1 [ 2, 3, 4, 5, 6 ])
@@ -91,7 +90,7 @@ main =
         test "map" do
           Assert.equal (NonEmpty 10 [ 20, 30 ])
             $ map (_ * 10)
-            $ NonEmpty 1 [ 2, 3 ]
+            $ NonEmpty 1 [ 2, 3 ] {-  Move this block comment starting point to enable more tests
       suite "Ord Extended" do
         -- Type annotation necessary to ensure there is an Ord instance for inner type (Int in this case)
         test "infinity equals infinity" do
