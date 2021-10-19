@@ -85,10 +85,22 @@ allTheFiles file = file : do
 onlyFiles :: Path -> Array Path 
 onlyFiles d = filter (not isDirectory) $ allTheFiles d
 
-whereIs :: Path -> String -> Maybe Path
-whereIs path fn = head $ do 
-     paths <- allTheFiles rt
-     b <- ls paths 
-     guard $ filename b == filename paths <> fn 
-     pure paths
-    
+whereIs :: Path -> String -> Maybe Path 
+whereIs p fn = head $ do 
+     file  <- allTheFiles p 
+     child <- ls file
+     guard $ filename child == filename file <> fn
+     pure file 
+
+largestSmallest :: Path -> Array Path 
+largestSmallest p = foldl go [] (onlyFiles p) 
+   where 
+     go :: Array Path -> Path -> Array Path
+     go [largest, smallest] next 
+        | size next > size largest  = [next, smallest] 
+        | size next < size smallest = [largest, next]
+        | otherwise                 = [largest, smallest] 
+     go [first] second 
+        | size first > size second  = [first, second]
+        | otherwise                 = [second, first]
+     go empty first                    = first : empty
