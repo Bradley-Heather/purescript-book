@@ -64,3 +64,4 @@ instance semigroupNonEmpty :: Semigroup (NonEmpty a) where
 
 instance functorNonEmpty :: Functor NonEmpty where 
      map f (NonEmpty a as) = NonEmpty (f a) (map f as)
+
